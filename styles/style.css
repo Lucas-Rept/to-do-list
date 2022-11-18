@@ -22,7 +22,7 @@ main{
     background-color: white;
     width: 80%;
     min-height: 80vh;
-    border-radius: 20px;
+    border-radius: 22px;
     box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.253);
 }
 
@@ -151,6 +151,7 @@ main{
 .line{
     transition: 0.2s;
     text-decoration: line-through;
+    color: #FE7979;
 }
 
 .button2{
@@ -182,5 +183,17 @@ main{
 
 .input2:focus{
     outline: none;
+}
 
+.input2::placeholder{
+    color: #ff6262a7;
+}
+
+@media screen and (max-width: 500px){
+    body{
+        background-image: url(../images/cellphonebg.png);
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    
 }

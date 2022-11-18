@@ -32,6 +32,23 @@ function remove(event){
     event.target.parentElement.remove();
 }
 
+function toogle(event){
+    if(event.target.value == ""){
+        return;
+    }
+    event.target.parentElement.innerHTML = "<p> "+ event.target.value + "</p>"
+}
+
+function inputChange(event){
+    event.target.innerHTML = '<input type="text" class="input2" placeholder=" Type here"></input>'
+
+    let inputs2 = document.getElementsByClassName("input2")
+    for(var input2 of inputs2){
+        input2.addEventListener("focusout", toogle);
+    }
+    
+}
+
 function add() {
     if (check(addInput) == false) {
         return;
@@ -41,7 +58,7 @@ function add() {
     <div class="border">
         <div class="circle"></div>
     </div>
-    <p class="appointment">`+ addInput.value + `</p>
+    <div class="appointment"><p>`+ addInput.value + `</p></div>
     <img src="./images/minus.png" alt="removeIcon" class="button2">
 </li>`
 
@@ -57,5 +74,9 @@ function add() {
         removeButton.addEventListener("click", remove);
     } 
 
+    let appointments = document.getElementsByClassName("appointment");
+    for(var appointment of appointments){
+        appointment.addEventListener("click", inputChange);
+    }
 
 }
